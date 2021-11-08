@@ -10,6 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+#ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_11_08_062645) do
 
+  create_table "users", force: :cascade do |t|
+    t.integer "student_num"
+    t.string "pass"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "valuations", force: :cascade do |t|
+    t.string "comment"
+    t.float "star"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
+#end
