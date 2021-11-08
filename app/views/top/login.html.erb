@@ -1,1 +1,11 @@
-<h1>test</h1>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<%= form_tag top_login_path, method: :post do %>
+  <%= label_tag :student_num,, '学籍番号' %> 
+  <%= text_field_tag :student_num %> 
+  <%= label_tag :pass, 'パスワード' %> 
+  <%= password_field_tag :pass %> 
+  <%= submit_tag 'ログイン' %>
+<% end %>
