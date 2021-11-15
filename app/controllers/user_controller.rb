@@ -14,7 +14,7 @@ class UserController < ApplicationController
           flash[:notice] = 'ユーザ登録完了'
           @user.pass = BCrypt::Password.create(params[:user][:password])
           @user.save
-          redirect_to user_path
+          redirect_to '/'
         else
           render 'new'
         end
@@ -24,6 +24,6 @@ class UserController < ApplicationController
         if user.destroy
           flash[:notice] = 'ユーザを削除しました'
         end
-        redirect_to users_path
+        redirect_to '/'
     end
 end
