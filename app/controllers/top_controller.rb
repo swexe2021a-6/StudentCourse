@@ -4,10 +4,10 @@ class TopController < ApplicationController
     end
 
   def login
-    user = User.find_by(user: params[:user])
+    user = User.find_by(student_num: params[:student_num])
     if user and BCrypt::Password.new(user.pass) == params[:pass]
       flash[:notice] = 'ログイン成功'
-      session[:login_user] = user.user
+      session[:login_student_num] = user.student_num #[:login_uid]
       redirect_to root_path
     else
       flash[:notice] = 'ログイン失敗'
