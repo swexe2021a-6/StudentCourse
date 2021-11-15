@@ -4,10 +4,10 @@ class TopController < ApplicationController
     end
 
   def login
-    user = User.find_by(uid: params[:uid])
+    user = User.find_by(user: params[:user])
     if user and BCrypt::Password.new(user.pass) == params[:pass]
       flash[:notice] = 'ログイン成功'
-      session[:login_uid] = user.uid
+      session[:login_user] = user.user
       redirect_to root_path
     else
       flash[:notice] = 'ログイン失敗'
@@ -17,7 +17,7 @@ class TopController < ApplicationController
 
   def logout
     flash[:notice] = 'ログアウトに成功'
-    session.delete(:login_uid)
+    session.delete(:login_user)
     
     redirect_to root_path
   end
