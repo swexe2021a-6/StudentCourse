@@ -17,7 +17,7 @@ class TopController < ApplicationController
 
   def logout
     flash[:notice] = 'ログアウトに成功'
-    session.delete(:login_user)
+    session.delete(:login_student_num)
     
     redirect_to root_path
   end
