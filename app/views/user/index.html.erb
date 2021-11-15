@@ -23,10 +23,18 @@
 
 <div class = "main">
   <div class = content1>
-    <strong><%= link_to '科目情報閲覧の方はこちら', '/' %></strong>
+    <% if current_user %>
+      <strong><%= link_to '科目情報閲覧の方はこちら', '/' %></strong>
+    <% else %>
+      <strong><%= link_to '科目情報閲覧の方はこちら', top_main_path %></strong>
+    <% end %>
   </div>
   <div class = content2>
-    <strong><%= link_to '科目情報登録の方はこちら', '/' %></strong>
+    <% if current_user %>
+      <strong><%= link_to '科目情報登録の方はこちら', '/' %></strong>
+    <% else %>
+      <strong><%= link_to '科目情報登録の方はこちら', top_main_path %></strong>
+    <% end %>
   </div>
 </div>
 
