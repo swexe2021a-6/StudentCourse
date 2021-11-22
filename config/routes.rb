@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   get 'valuation/index'
   get 'valuation/indexView'
   resources :valuation
+<<<<<<< HEAD
+=======
+  #get 'valuation/index'
+  get 'valuation/indexView'
+
+>>>>>>> check
   get 'top/main'
   post 'top/login'
   get 'top/logout'
