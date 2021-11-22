@@ -24,14 +24,14 @@
 <div class = "main">
   <div class = content1>
     <% if current_user %>
-      <strong><%= link_to '科目情報閲覧の方はこちら', '/' %></strong>
+      <strong><%= link_to '科目情報閲覧の方はこちら', valuation_indexS_path %></strong>
     <% else %>
       <strong><%= link_to '科目情報閲覧の方はこちら', top_main_path %></strong>
     <% end %>
   </div>
   <div class = content2>
     <% if current_user %>
-      <strong><%= link_to '科目情報登録の方はこちら', '/' %></strong>
+      <strong><%= link_to '科目情報登録の方はこちら', valuation_index_path %></strong>
     <% else %>
       <strong><%= link_to '科目情報登録の方はこちら', top_main_path %></strong>
     <% end %>
