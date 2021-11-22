@@ -1,4 +1,5 @@
 class Valuation < ApplicationRecord
     validates :comment, presence: true
-    belongs_to :user
+    validates :student_num, uniqueness: true, presence: true
+    has_many :user
 end
