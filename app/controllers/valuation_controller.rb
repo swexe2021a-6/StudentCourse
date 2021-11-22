@@ -1,10 +1,6 @@
 class ValuationController < ApplicationController
-<<<<<<< HEAD
-
-=======
-    def search
-        @valuation = Valuation.where(title: params[:keyword])
-        render "index"
+    def index
+        @valuation = Valuation.all
     end
     
     def new
@@ -22,5 +18,4 @@ class ValuationController < ApplicationController
           render 'new'
         end
     end
->>>>>>> vv
 end

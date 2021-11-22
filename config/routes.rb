@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :valuation
   #get 'valuation/index'
-  get 'valuation/indexS'
+  get 'valuation/indexView'
 
   get 'top/main'
   post 'top/login'
