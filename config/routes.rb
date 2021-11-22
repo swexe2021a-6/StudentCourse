@@ -3,11 +3,7 @@ Rails.application.routes.draw do
   #resources :valuation
   get 'valuation/index'
   get 'valuation/indexView'
-
   resources :valuation
-  #get 'valuation/index'
-  get 'valuation/indexS'
-
   get 'top/main'
   post 'top/login'
   get 'top/logout'
