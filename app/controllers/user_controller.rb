@@ -8,6 +8,7 @@ class UserController < ApplicationController
     def new
         @user = User.new
     end
+    
     def create
         logger.debug "---------------"
         @user = User.new(student_num: params[:user][:student_num],
