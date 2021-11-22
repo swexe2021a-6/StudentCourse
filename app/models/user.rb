@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     #TODO: validates
-    #has_many :valuation, dependent: :destroy
+    belongs_to :valuation #, dependent: :destroy
+    has_many :valuation, foreign_key: 'user_id'
     
     validates :password, presence: true, confirmation: true
     validates :student_num, uniqueness: true, presence: true

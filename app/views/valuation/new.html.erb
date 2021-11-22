@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+   <%= flash[:notice] %>
+<% end %>
+
+<%= form_for @valuation, url: {action: :create} do |f| %>
+  <%= f.label :comment, 'コメント' %> 
+  <%= f.text_field :comment %> 
+  <%= f.label :star, '評価' %> 
+  <%= f.text_field :star %>
+  <%= f.submit '登録' %>
+<% end %>

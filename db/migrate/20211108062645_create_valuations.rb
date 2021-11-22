@@ -3,6 +3,7 @@ class CreateValuations < ActiveRecord::Migration[5.2]
     create_table :valuations do |t|
       t.string :comment
       t.float :star
+      t.integer :user_id
 
       t.timestamps
     end
