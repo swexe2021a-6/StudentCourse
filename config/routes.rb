@@ -8,6 +8,4 @@ Rails.application.routes.draw do
   get 'top/logout'
   root 'user#index'
   get 'user/register'
-  post '/valuation/search', to: 'valuation#search'
-
 end
