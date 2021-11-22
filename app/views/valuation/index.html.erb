@@ -1,6 +1,7 @@
 <% if flash[:notice] %>
   <%= flash[:notice] %>
 <% end %>
+
 <div class="search">
   <%= form_tag '/valuation/search', method: :post do %>
   <%= text_field_tag :keyword %>
