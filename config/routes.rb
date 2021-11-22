@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   #get 'valuation/index'
   get 'valuation/indexView'
 
+
+  #get 'valuation/index'
+  get 'valuation/indexView'
+
   get 'top/main'
   post 'top/login'
   get 'top/logout'
