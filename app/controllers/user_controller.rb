@@ -2,6 +2,9 @@ class UserController < ApplicationController
     def index
         @user = User.all
     end
+    def register
+        render 'register'
+    end
     def new
         @user = User.new
     end

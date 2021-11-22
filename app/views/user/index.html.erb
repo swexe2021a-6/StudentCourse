@@ -31,7 +31,7 @@
   </div>
   <div class = content2>
     <% if current_user %>
-      <strong><%= link_to '科目情報登録の方はこちら', '/' %></strong>
+      <strong><%= link_to '科目情報登録の方はこちら', 'user/register' %></strong>
     <% else %>
       <strong><%= link_to '科目情報登録の方はこちら', top_main_path %></strong>
     <% end %>
