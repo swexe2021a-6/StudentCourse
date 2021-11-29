@@ -8,8 +8,32 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <body>
     <%= yield %>
+    
   </body>
+   <footer>
+    <hr>
+    <div class = "user_verification">
+    <p>
+    <% if current_user %>
+      ログイン中（<%= current_user.student_num %>さん）
+    <% else %>
+      ログインしていません
+    <% end %>
+    </p>
+    </div>
+    <p>&copy; Kindai Sangyoriko</p>
+  </footer>
 </html>
+
+<style>
+  .user_verification{
+    text-align: center;
+  }
+  footer{
+  text-align: center;
+  padding-top :150px;
+}
+</style>
