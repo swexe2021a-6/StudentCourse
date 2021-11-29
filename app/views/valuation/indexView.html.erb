@@ -12,6 +12,7 @@
     <h1>情報学科専門科目講義一覧</h1>
   </header>
   <body>
+    <%= link_to '戻る', "/" %>
     <table border="1">
     <tr>
       <th>　科目名　</th>
@@ -23,7 +24,7 @@
       <td>数学</td>
       <td>1年次前期</td>
       <td><a href="#">こちら</a></td>
-      <td><a href="#">閲覧</a></td>
+      <td><%= link_to '閲覧', show_valuation_path %></td>
     </tr>
     <tr>
       <td>数学演習</td>
