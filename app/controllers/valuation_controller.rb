@@ -19,7 +19,8 @@ class ValuationController < ApplicationController
         end
     end
     def show
-        @valuation = Valuation.find(params[:id])
+        @valuation = user.id
+        #item.where(cart_id: current_cart.id)
     end
     
 end

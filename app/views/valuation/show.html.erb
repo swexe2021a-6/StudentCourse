@@ -1,8 +1,18 @@
+<<<<<<< HEAD
 <% @valuation.each do |e| %>
   <p>
   
     <%= e.message %>
     
+=======
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+>>>>>>> iv
 
+<% @valuation.each do |e| %>
+    <p>
+    <%= e.comment %>
+    <%= e.star %>
     </p>
 <% end %>
