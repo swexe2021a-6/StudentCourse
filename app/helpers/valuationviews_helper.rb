@@ -1,0 +1,2 @@
+module ValuationviewsHelper
+end

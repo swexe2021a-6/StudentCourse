@@ -1,0 +1,12 @@
+<% if flash[:info] %>
+  <%= flash[:info] %>
+<% end %>
+
+<% @valuation.each do |e| %>
+    <p>
+    コメント：<%= e.comment %>
+    評価：<%= e.star %>
+    <p>
+<% end %>
+
+<%= link_to '戻る', "/" %>

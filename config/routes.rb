@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   get 'valuation/indexView'
   resources :valuation
   
-  get 'valuation/show'
-
+  
   get 'top/main'
   post 'top/login'
   get 'top/logout'
@@ -16,4 +15,7 @@ Rails.application.routes.draw do
   resources :management
   get 'management/index'
   get 'management/new'
+  
+  get 'valuationviews/show'
+  #resources :valuationviews, only: [:show]
 end
