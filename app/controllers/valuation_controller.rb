@@ -3,7 +3,10 @@ class ValuationController < ApplicationController
         @valuation = Valuation.all
         @management = Management.all
     end
-    
+    def indexView
+        @valuation = Valuation.all
+        @management = Management.all
+    end
     def new
         @valuation = Valuation.new
     end
