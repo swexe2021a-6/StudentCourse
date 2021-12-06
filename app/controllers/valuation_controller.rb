@@ -1,6 +1,7 @@
 class ValuationController < ApplicationController
     def index
         @valuation = Valuation.all
+        @management = Management.all
     end
     
     def new

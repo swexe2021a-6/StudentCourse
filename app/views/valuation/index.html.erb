@@ -14,17 +14,17 @@
     <%= link_to '戻る', "/" %>
     <table border="1">
     <tr>
-      <td>データベース</td>
-      <td>2年次後期</td>
-      <td><a href="https://fuk-unipa.itp.kindai.ac.jp/up/faces/up/xu/pXuk0204A.jsp?sanshoTblFlg=1&nendo=2021&jugyoCd=10221S0585">こちら</a></td>
-      <td><a href="#">登録</a></td>
+      <th>　科目名　</th>
+      <th>　開講年次　</th>
+      <th>　シラバス　</th>
+      <th>　コメント評価を登録</th>
     </tr>
     <% @management.each do |e| %>
     <tr>
       <td><%= e.subject %></td>
       <td><%= e.annual %></td>
-      <td><%= link_to 'シラバス', management.link %></td>
-      <td><a href="#">登録</a></td>
+      <td><%= link_to 'シラバス', e.link %></td>
+      <td><%= link_to '評価登録', new_valuation_path %></td>
     </tr>
     <% end %>
   </table>

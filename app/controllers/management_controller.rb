@@ -1,6 +1,7 @@
 class ManagementController < ApplicationController
     def index
         @management = Management.all
+        logger.debug @management
     end
     def new
         @management = Management.new
