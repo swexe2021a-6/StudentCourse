@@ -1,24 +1,25 @@
 <% if flash[:notice] %>
   <%= flash[:notice] %>
 <% end %>
-<% @user.each do |e| %>
-  <p>
-    <%= e.student_num %>
-    <%= e.pass %>
-    <%= link_to '削除', user_path(e), method: :delete %>
+<header>
+  <% @user.each do |e| %>
+    <p>
+      <%= e.student_num %>
+      <%= e.pass %>
+      <%= link_to '削除', user_path(e), method: :delete %>
     </p>
-<% end %>
-<nav>
-  <div class = "nav_left">
-    <%= link_to '新規ユーザ追加', new_user_path %>
-  </div>
-  <div class = "nav_right"><% if current_user %>
-    <%= link_to 'ログアウト', top_logout_path %>
-  <% else %>
-    <%= link_to 'ログイン', top_main_path %>
-  <% end %></div>
-</nav>
-
+  <% end %>
+  <nav>
+    <div class = "nav_left">
+      <%= link_to '新規ユーザ追加', new_user_path %>
+    </div>
+    <div class = "nav_right"><% if current_user %>
+      <%= link_to 'ログアウト', top_logout_path %>
+    <% else %>
+      <%= link_to 'ログイン', top_main_path %>
+    <% end %></div>
+  </nav>
+</header>
 <div class = "main">
   <div class = content1>
     <% if current_user %>
@@ -41,10 +42,15 @@
 
 <style>
 nav{
-  width: 1500px;
+  width : 100vw;
   text-align: center;
-  background-color: #38b6ff;
-  padding: 0px 100px;
+  background: #1b9bff;
+  height: 70px;
+  vertical-align: middle;
+  color:white;
+}
+nav :visited{
+  color:white;
 }
 .nav_left{
   float: left;
@@ -53,24 +59,28 @@ nav{
   float: right;
 }
 .content1,.content2{
- width: 50%;
+ width : 100vw;
  height: 100px;
+ color:white;
  
 }
 .content1 strong{
-  background-color:#38b6ff;
+  background-color:#1b9bff;
   padding:20px 20px;
   border-radius: 15px;
 }
 .content2 strong{
-  background-color:#38b6ff;
+  background-color:#1b9bff;
   padding:20px 20px;
   border-radius: 15px;
 }
 .main{
  display: flex;
- width:2000px;
+ width : 100vw;
  padding-top: 150px;
  text-align: center;
+}
+.main :visited{
+  color :white;
 }
 </style>

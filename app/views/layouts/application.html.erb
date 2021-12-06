@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>StudentCourse</title>
+    <%= favicon_link_tag 'icon.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -29,10 +29,13 @@
 </html>
 
 <style>
-  .user_verification{
-    text-align: center;
-  }
-  footer{
+*{
+  text-decoration: none;
+}
+.user_verification{
+  text-align: center;
+}
+footer{
   text-align: center;
   padding-top :150px;
 }

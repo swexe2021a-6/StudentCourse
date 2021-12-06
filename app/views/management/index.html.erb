@@ -1,3 +1,20 @@
 <h1>管理者画面</h1>
-<%= link_to '新規科目の追加', management_new_path %>
-<%= link_to 'ホーム','/' %>
+<%= link_to 'ホーム','/' %><br>
+<%= link_to '新規科目の追加', management_new_path %><br>
+
+<table border="1">
+    <tr>
+      <th>　科目名　</th>
+      <th>　開講年次　</th>
+      <th>　シラバス　</th>
+      <th>　データの削除　</th>
+    </tr>
+    <% @management.each do |e| %>
+    <tr>
+      <td><%= e.subject %></td>
+      <td><%= e.annual %></td>
+      <td><%= link_to 'シラバス', e.link, target: :_blank %></td>
+      <td><%= link_to '削除', management_path(e), method: :delete %></td>
+    </tr>
+    <% end %>
+  </table>
