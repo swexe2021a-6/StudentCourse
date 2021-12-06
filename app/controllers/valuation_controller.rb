@@ -19,8 +19,8 @@ class ValuationController < ApplicationController
         end
     end
     def show
+        user = User.find_by(student_num: current_user.student_num)
         @valuation = user.id
         #item.where(cart_id: current_cart.id)
     end
-    
 end
