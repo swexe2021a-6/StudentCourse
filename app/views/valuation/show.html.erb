@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 <% if flash[:notice] %>
   <%= flash[:notice] %>
 <% end %>
 
+=======
+<% @valuation.each do |e| %>
+  <p>
+    <%= e.message %>
+  </p>
+>>>>>>> management_index
 <% @valuation.each do |e| %>
     <p>
     <%= e.comment %>

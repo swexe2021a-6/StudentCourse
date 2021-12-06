@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   post 'top/login'
   get 'top/logout'
   root 'user#index'
-  get 'user/register'
+  get 'user/show'
   
+  resources :management
   get 'management/index'
+  get 'management/new'
 end

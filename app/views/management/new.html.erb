@@ -1,9 +1,10 @@
 <%= form_for @management, url: {action: :create} do |f| %>
-  <%= f.label :subject, '科目' %> 
-  <%= f.text_field :subject %> 
-  <%= f.label :annual, '開講年次' %> 
-  <%= f.password_field :annual %>
-  <%= f.label :link, 'シラバスリンク' %> 
-  <%= f.password_field :link %>
+  <p><%= f.label :subject, '科目名：' %>
+  <%= f.text_field :subject %></p>
+  <p><%= f.label :annual, '開講年次' %> 
+  <%= f.text_field :annual %></p>
+  <p><%= f.label :link, 'シラバスリンク' %> 
+  <%= f.text_field :link %></p>
+  </div>
   <%= f.submit '登録' %>
 <% end %>
