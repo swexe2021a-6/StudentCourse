@@ -1,38 +1,37 @@
+<header>
+  <nav>
+    <ul>
+    <li class="current"><%= link_to 'ホーム', root_path %></li>
+    <li><%= link_to '新規ユーザ追加', new_user_path %></li>
+    <li><% if current_user %>
+          <%= link_to 'ログアウト', top_logout_path %>
+        <% else %>
+          <%= link_to 'ログイン', top_main_path %>
+        <% end %></li>
+    <li><% if current_user %>
+          <%= link_to current_user.student_num.to_s + "さん", user_mypage_path %>
+        <% else %>
+          ゲストさん
+        <% end %></li>
+    </ul>
+  </nav>
+</header>
 <% if flash[:notice] %>
   <%= flash[:notice] %>
 <% end %>
-<header>
-  <% @user.each do |e| %>
-    <p>
-      <%= e.student_num %>
-      <%= e.pass %>
-      <%= link_to '削除', user_path(e), method: :delete %>
-    </p>
-  <% end %>
-  <nav>
-    <div class = "nav_left">
-      <%= link_to '新規ユーザ追加', new_user_path %>
-    </div>
-    <div class = "nav_right"><% if current_user %>
-      <%= link_to 'ログアウト', top_logout_path %>
-    <% else %>
-      <%= link_to 'ログイン', top_main_path %>
-    <% end %></div>
-  </nav>
-</header>
 <div class = "main">
   <div class = content1>
     <% if current_user %>
-      <strong><%= link_to '科目情報閲覧の方はこちら', valuation_indexView_path %></strong>
+      <strong><%= link_to '科目情報の閲覧', valuation_indexView_path %></strong>
     <% else %>
-      <strong><%= link_to '科目情報閲覧の方はこちら', top_main_path %></strong>
+      <strong><%= link_to '科目情報の閲覧', top_main_path %></strong>
     <% end %>
   </div>
   <div class = content2>
     <% if current_user %>
-      <strong><%= link_to '科目情報登録の方はこちら', valuation_index_path %></strong>
+      <strong><%= link_to '科目情報の登録', valuation_index_path %></strong>
      <% else %>
-      <strong><%= link_to '科目情報登録の方はこちら', top_main_path %></strong>
+      <strong><%= link_to '科目情報の登録', top_main_path %></strong>
     <% end %>
   </div>
 </div>
@@ -42,38 +41,60 @@
 
 <style>
 nav{
-  width : 100vw;
-  text-align: center;
-  background: #1b9bff;
-  height: 70px;
-  vertical-align: middle;
-  color:white;
+border-bottom: 1px solid #000000;
 }
-nav :visited{
-  color:white;
+nav ul{
+display: table;
+margin: 0 auto;
+padding: 0;
+width: 80%;
+text-align: center;
 }
-.nav_left{
-  float: left;
+nav ul li{
+display: table-cell;
+min-width: 50px;
+border-right: 1px solid #000000;
 }
-.nav_right{
-  float: right;
+nav ul li:first-child{
+border-left: 1px solid #000000;
 }
+nav ul li a{
+display: block;
+width: 100%;
+padding: 10px 0;
+text-decoration: none;
+color: #000000;
+}
+nav ul li a:hover{
+background-color:#1b9bff;
+border-bottom: 5px solid #1b9bff;
+}
+nav ul li.current{
+font-weight: bold;
+}
+nav ul li.current a{
+border-bottom: 5px solid #1b9bff;
+color: #1b9bff;
+}
+nav ul li.current a:hover{
+border-bottom: 5px solid #ffffff;
+color: #ffffff;
+}
+
+
 .content1,.content2{
- width : 100vw;
- height: 100px;
- color:white;
- 
+width: 300px;
+height: 300px;
+border-radius: 50%;
+background-color:#1b9bff;
+text-align:center;
+line-height: 300px;
+margin: auto 200px;
+font-size:24pt;
 }
-.content1 strong{
-  background-color:#1b9bff;
-  padding:20px 20px;
-  border-radius: 15px;
+.content1 strong,.content2 strong{
 }
-.content2 strong{
-  background-color:#1b9bff;
-  padding:20px 20px;
-  border-radius: 15px;
-}
+
 .main{
  display: flex;
  width : 100vw;
@@ -83,4 +104,5 @@ nav :visited{
 .main :visited{
   color :white;
 }
+
 </style>

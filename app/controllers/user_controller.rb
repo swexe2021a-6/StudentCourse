@@ -2,11 +2,10 @@ class UserController < ApplicationController
     def index
         @user = User.all
     end
-=begin
-    def register
-        render 'register'
+    def mypage
+        @user = User.all
+        render 'mypage'
     end
-=end
     def new
         @user = User.new
     end
@@ -20,7 +19,7 @@ class UserController < ApplicationController
           flash[:notice] = 'ユーザ登録完了'
           @user.pass = BCrypt::Password.create(params[:user][:password])
           @user.save
-          redirect_to '/'
+          redirect_to root_path
         else
           render 'new'
         end
@@ -30,7 +29,7 @@ class UserController < ApplicationController
         if user.destroy
           flash[:notice] = 'ユーザを削除しました'
         end
-        redirect_to '/'
+        redirect_to root_path
     end
     
 end
