@@ -16,6 +16,7 @@
     </ul>
   </nav>
 </header>
+<%= link_to '管理画面へ',management_index_path %>
 <% if flash[:notice] %>
   <%= flash[:notice] %>
 <% end %>
@@ -35,9 +36,6 @@
     <% end %>
   </div>
 </div>
-<footer>
-  <%= link_to '管理画面へ',management_index_path %>
-</footer>
 
 <style>
 nav{
@@ -64,10 +62,12 @@ width: 100%;
 padding: 10px 0;
 text-decoration: none;
 color: #000000;
+color: inherit;
 }
 nav ul li a:hover{
 background-color:#1b9bff;
 border-bottom: 5px solid #1b9bff;
+color: inherit;
 }
 nav ul li.current{
 font-weight: bold;
@@ -81,7 +81,6 @@ border-bottom: 5px solid #ffffff;
 color: #ffffff;
 }
 
-
 .content1,.content2{
 width: 300px;
 height: 300px;
@@ -91,8 +90,6 @@ text-align:center;
 line-height: 300px;
 margin: auto 200px;
 font-size:24pt;
-}
-.content1 strong,.content2 strong{
 }
 
 .main{
