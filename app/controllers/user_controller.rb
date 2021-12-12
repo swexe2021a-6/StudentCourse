@@ -3,7 +3,6 @@ class UserController < ApplicationController
         @user = User.all
     end
     def mypage
-        @user = User.all
         render 'mypage'
     end
     def new
