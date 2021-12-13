@@ -32,13 +32,11 @@ ActiveRecord::Schema.define(version: 2021_12_06_065204) do
     t.float "star"
     t.integer "user_id"
     t.datetime "tdate"
-    t.string "subject"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "valuationviews", force: :cascade do |t|
-    t.string "subject"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
