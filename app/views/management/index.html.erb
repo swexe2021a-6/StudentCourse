@@ -3,14 +3,13 @@
   <nav>
     <ul>
     <li class="current"><%= link_to 'ホーム', root_path %></li>
-    <li><%= link_to '新規科目の追加', management_new_path %></li>
     <li><% if current_user %>
           <%= link_to 'ログアウト', top_logout_path %>
         <% else %>
           <%= link_to 'ログイン', top_main_path %>
         <% end %></li>
     <li><% if current_user %>
-          <%= link_to current_user.student_num.to_s + "さん", user_mypage_path %>
+          <%= current_user.student_num.to_s + "さん" %>
         <% else %>
           ゲストさん
         <% end %></li>
@@ -22,6 +21,8 @@
     <% if flash[:notice] %>
       <%= flash[:notice] %>
     <% end %>
+    <button><%= link_to '新規科目の追加', management_new_path %></button>
+    <button><%= link_to '戻る', root_path %></button>
     <table border="1">
         <tr>
           <th>　科目名　</th>
@@ -38,6 +39,13 @@
         </tr>
         <% end %>
     </table>
+    <% @user.each do |e| %>
+        <p>
+          学籍番号：<%= e.student_num %><br>
+          パスワード：<%= e.pass %>
+          <%= link_to '削除', user_path(e), method: :delete %>
+        </p>
+    <% end %>
     
   </body>
 </html>
@@ -81,5 +89,8 @@ color: #1b9bff;
 nav ul li.current a:hover{
 border-bottom: 5px solid #ffffff;
 color: #ffffff;
+}
+button{
+  margin-bottom:10px;
 }
 </style>
