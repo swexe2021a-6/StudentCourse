@@ -38,15 +38,22 @@
           <td><%= link_to '削除', management_path(e), method: :delete %></td>
         </tr>
         <% end %>
-    </table>
+    </table><br>
+    <h1>ユーザ管理一覧</h1>
+    <table border="1">
+      <tr>
+        <th>　学籍番号　</th>
+        <th>　パスワード　</th>
+        <th>　ユーザの削除　</th>
+      </tr>
     <% @user.each do |e| %>
-        <p>
-          学籍番号：<%= e.student_num %><br>
-          パスワード：<%= e.pass %>
-          <%= link_to '削除', user_path(e), method: :delete %>
+        <tr>
+          <td><%= e.student_num %></td>
+          <td><%= e.pass %></td>
+          <td><%= link_to '削除', user_path(e), method: :delete %></td>
         </p>
     <% end %>
-    
+    </table>
   </body>
 </html>
 <style>
