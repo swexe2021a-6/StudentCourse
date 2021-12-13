@@ -9,7 +9,7 @@
           <%= link_to 'ログイン', top_main_path %>
         <% end %></li>
     <li><% if current_user %>
-          <%= link_to current_user.student_num.to_s + "さん", user_mypage_path %>
+          <%= link_to "マイページ", user_mypage_path %>
         <% else %>
           ゲストさん
         <% end %></li>

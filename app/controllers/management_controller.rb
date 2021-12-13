@@ -14,7 +14,7 @@ class ManagementController < ApplicationController
         if @management.valid?
           flash[:notice] = 'データ登録完了'
           @management.save
-          redirect_to '/'
+          redirect_to management_index_path
         else
           render 'new'
         end
@@ -24,6 +24,6 @@ class ManagementController < ApplicationController
         if management.destroy
           flash[:notice] = 'データを削除しました'
         end
-        redirect_to '/'
+        redirect_to management_index_path
     end
 end
