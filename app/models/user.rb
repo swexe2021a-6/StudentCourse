@@ -2,8 +2,8 @@ class User < ApplicationRecord
     #TODO: validates
     has_many :valuation #, dependent: :destroy
     
-    validates :password, presence: true, confirmation: true
-    validates :student_num, uniqueness: true, presence: true
+    validates :password, presence: true, confirmation: true, length: { maximum: 8 }
+    validates :student_num, uniqueness: true, presence: true, length: { is: 10 }
     attr_accessor :password, :password_confirmation
 
   def password=(val)

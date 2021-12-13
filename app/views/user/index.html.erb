@@ -9,7 +9,7 @@
           <%= link_to 'ログイン', top_main_path %>
         <% end %></li>
     <li><% if current_user %>
-          <%= link_to "マイページ", user_mypage_path %>
+          <%= current_user.student_num.to_s + "さん" %>
         <% else %>
           ゲストさん
         <% end %></li>
@@ -36,7 +36,6 @@
     <% end %>
   </div>
 </div>
-
 <style>
 nav{
 border-bottom: 1px solid #000000;

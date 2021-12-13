@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get 'top/logout'
   root 'user#index'
   get 'user/show'
-  get 'user/mypage'
   
   resources :management
   get 'management/index'
