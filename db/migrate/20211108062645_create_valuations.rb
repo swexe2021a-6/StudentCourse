@@ -4,6 +4,9 @@ class CreateValuations < ActiveRecord::Migration[5.2]
       t.string :comment
       t.float :star
       t.integer :user_id
+      
+      t.string :subject_id
+      
       t.datetime :tdate
       t.string :subject
       t.timestamps

@@ -13,7 +13,9 @@ class ValuationController < ApplicationController
     
     def create
         user = User.find_by(student_num: current_user.student_num)
-        @valuation = Valuation.new(comment: params[:valuation][:comment], star: params[:valuation][:star], tdate: Time.current, user_id: user.id)
+        #management = Management.find_by(subject: )
+        @valuation = Valuation.new(comment: params[:valuation][:comment], star: params[:valuation][:star],
+                                    tdate: Time.current, user_id: user.id, subject_id: management.id)
         if @valuation.save
           #TODO: ツイートが成功したことをユーザに知らせる
           flash[:notice] = '評価登録完了！'
