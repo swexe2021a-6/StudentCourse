@@ -24,7 +24,7 @@
       <td><%= e.subject %></td>
       <td><%= e.annual %></td>
       <td><%= link_to 'シラバス', e.link, target: :_blank %></td>
-      <td><%= link_to '評価閲覧', valuationviews_show_path(subject:e.subject) %></td>
+      <td><%= link_to '評価閲覧', valuationviews_show_path(id:e.id) %></td>
     </tr>
     <% end %>
   </table>
