@@ -13,7 +13,7 @@ class ValuationController < ApplicationController
     
     def create
         user = User.find_by(student_num: current_user.student_num)
-        #management = Management.find(params[:id])
+        #management = Management.find[:id](params[:id])
         logger.debug params
         @valuation = Valuation.new(comment: params[:valuation][:comment], star: params[:valuation][:star],
                                     user_id: user.id, tdate: Time.current, subject: params[:id])
