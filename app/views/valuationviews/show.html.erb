@@ -6,10 +6,12 @@
     <p>
     コメント：<%= e.comment %>
     評価：<%= e.star %>
-    時刻：<%= e.tdate %>
+    時刻：<%= e.tdate.strftime('%Y/%m/%d %H:%M:%S') %>
     
-    <p>
+    </p>
 <% end %>
+
+平均値：<%= Valuation.where(subject: params[:id]).average(:star) %><br>
 
 <%= link_to '戻る', "/" %>
 <style>
