@@ -11,7 +11,7 @@
     </p>
 <% end %>
 
-平均値：<%= Valuation.where(subject: params[:id]).average(:star) %><br>
+平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br>
 
 <%= link_to '戻る', "/" %>
 <style>
