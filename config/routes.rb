@@ -19,7 +19,4 @@ Rails.application.routes.draw do
   get 'valuationviews/show'
   
   
-  
-  post '/valuation/search', to: 'valuation#search'
-  #resources :valuationviews, only: [:show]
 end

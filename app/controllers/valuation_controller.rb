@@ -26,8 +26,4 @@ class ValuationController < ApplicationController
           render 'new'
         end
     end
-    def search
-        @valuation = Valuation.where(subject: params[:keyword])
-        render valuation_index_path
-    end
 end

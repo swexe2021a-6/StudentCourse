@@ -16,24 +16,9 @@
    <footer>
     <div class="container">
       <div class="box">
-        <div class = "footer_list">
-          <div class = "footer_list_left">
-            <ul>
-              <li><%= link_to 'ユーザ登録', new_user_path %></li>
-              <li><%= link_to 'ログイン', top_main_path %></li>
-              <li><%= link_to 'ログアウト', top_logout_path %></li>
-            </ul>
-          </div>
-          <div class = "footer_list_right">
-            <ul>
-              <li>利用規約</li>
-              <li>プライバシーポリシー</li>
-              <li><%= link_to '管理画面',management_index_path %></li>
-            </ul>
-          </div>
-        </div><br>
         
         <div class = "user_verification">
+          <%= link_to '管理画面',management_index_path %>
           <p>
             <% if current_user %>
               ログイン中（<%= current_user.student_num %>さん）
@@ -66,31 +51,18 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 25vh;
 }
 .box {
   padding: 20px;
   text-align: center;
-  z-index:1;
+  z-index:7;
 }
 
-
-.footer_list ul{
-  list-style: none;
-}
-.footer_list_left ul li a{
-  color:black;
-  float:left;
-  margin:0px 20px;
-}
-.footer_list_right ul li a{
-  color:black;
-  float:right;
-  margin:0px 20px;
-}
 </style>
 <script>
   jQuery(".container").raindrops({
   color: "#1b9bff",
-  canvasHeight: 200
+  canvasHeight: 450
 });
 </script>
