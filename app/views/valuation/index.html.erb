@@ -23,7 +23,7 @@
       <td><%= e.subject %></td>
       <td><%= e.annual %></td>
       <td><%= link_to 'シラバス', e.link, target: :_blank %></td>
-      <td><%= link_to '評価登録', new_valuation_path %></td>
+      <td><%= link_to '評価登録', new_valuation_path(id: e.id) %></td>
     </tr>
     <% end %>
   </table>
