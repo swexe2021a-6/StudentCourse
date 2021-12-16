@@ -11,6 +11,11 @@
     <h1>情報学科専門科目講義一覧</h1>
   </header>
   <body>
+    <%= form_tag({controller:"valuation",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag "検索" ,:message => nil ,class: "button is-info"%> 
+    <button><%= link_to "全表示", valuation_index_path %></button>
+    <% end %>
     
     <table border="1">
     <tr>

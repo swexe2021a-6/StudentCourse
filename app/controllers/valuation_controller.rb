@@ -2,6 +2,11 @@ class ValuationController < ApplicationController
     def index
         @valuation = Valuation.all
         @management = Management.all
+        if params[:search] == nil or params[:search] == ''
+          @management = Management.all
+        else
+          @management = Management.where("subject LIKE ? ",'%' + params[:search] + '%') + Management.where("annual LIKE ? ",'%' + params[:search] + '%') 
+        end
     end
     def indexView
         @valuation = Valuation.all
