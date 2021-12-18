@@ -20,6 +20,24 @@
    <footer>
     <div class="container">
       <div class="box">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        
+        <div class = "user_verification">
+          
+          <p>
+            <% if current_user %>
+              ログイン中（<%= current_user.student_num %>さん）<br>
+              <%= link_to '管理画面',management_index_path %>
+            <% else %>
+              ログインしていません
+            <% end %>
+          </p>
+        </div>
+=======
+        <p><%= link_to '管理画面',management_index_path %></p>
+>>>>>>> e33c7380af50f9abaf8a7a467ec3c50663d151e6
         <p>
           <% if current_user %>
             ログイン中（<%= current_user.student_num %>さん）
@@ -27,6 +45,7 @@
             ログインしていません
           <% end %>
         </p>
+>>>>>>> 74bfedeaf4c74c29e52c68d96019316ebb84eb17
         <p>&copy; Kanbara&Ogita</p>
          <%= link_to image_tag("setting.png", class: 'setting_img'), management_index_path %>
       </div>
