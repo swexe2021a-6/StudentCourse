@@ -13,6 +13,8 @@ class ValuationController < ApplicationController
         @management = Management.all
     end
     def new
+        @management = Management.all
+        @management = Management.find(params[:id])
         @valuation = Valuation.new
     end
     

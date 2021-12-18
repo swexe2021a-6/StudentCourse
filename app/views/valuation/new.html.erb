@@ -10,13 +10,27 @@
   <% end %>
 </ul>
 <% end %>
-
+<div class="title">
+  <b><%= @management.subject %></b>
+</div>
 <%= form_for @valuation, url: {action: :create} do |f| %>
 <br>
-  <%= f.label :comment, 'コメント(300字以内)' %><br>
+<div class="main">
+  <%= f.label :comment, 'コメント　(300字以内)' %><br>
   <%= f.text_area :comment ,:size=>"60x5"%><br><br>
-  <%= f.label :star, '評価(100点)' %> 
-  <%= f.text_field :star %>点
-  <%= hidden_field_tag :id, params[:id] %>
+  <%= f.label :star, '評価　(最大100点)' %> <br>
+  <%= f.text_field :star %>点<br>
+  <%= hidden_field_tag :id, params[:id] %><br>
   <%= f.submit '登録' %>
+</div>
 <% end %>
+
+<style>
+.title{
+font-size:24pt;
+margin-left:10px;
+}
+.main{
+margin-left:20px;
+}
+</style>
