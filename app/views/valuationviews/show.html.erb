@@ -2,6 +2,10 @@
   <%= flash[:info] %>
 <% end %>
 
+
+<b><%= @management.subject %></b>
+
+
 <b>平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br></b>
 
 <div class = "main">

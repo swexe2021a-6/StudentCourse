@@ -27,4 +27,8 @@ class ManagementController < ApplicationController
         end
         redirect_to management_index_path
     end
+    
+    def show
+        @management = Management.find(params[:id])
+    end
 end
