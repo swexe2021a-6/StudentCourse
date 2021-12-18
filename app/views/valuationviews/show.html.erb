@@ -13,6 +13,6 @@
 
 平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br>
 
-<%= link_to '戻る', "/" %>
+<%= link_to '戻る', valuation_indexView_path %>
 <style>
 </style>
