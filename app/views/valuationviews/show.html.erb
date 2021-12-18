@@ -1,28 +1,37 @@
 <% if flash[:info] %>
   <%= flash[:info] %>
 <% end %>
-<% star=Valuation.where(subject: params[:id]).average(:star).round(1) %>
-<b>平均値：<%= star %><br></b>
+<div class="title">
+  <b>平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br></b>
+</div>
 
-<div class = "main">
+<div class = "button">
+  <button><%= link_to '戻る', valuation_indexView_path %></button>
+</div>
+
   <% @valuation.each do |e| %>
+  <div class = "main">
     <p>
     <b>コメント</b>：<%= e.comment %><br>
     <b>評価</b>：<%= e.star.to_i %>点<br>
     <b>投稿日時</b>：<%= e.tdate.strftime('%Y/%m/%d %H:%M:%S') %>
     </p>
+  </div>
 <% end %>
-</div>
-
-
-<%= link_to '戻る', valuation_indexView_path %>
 <style>
+.title{
+  font-size:24pt;
+  margin-left:10px;
+}
 .main{
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  font-weight: bold;
-  background: #FFF;
-  border: solid 3px #1b9bff;/*線*/
+  border:solid 3px #1b9bff;
   border-radius: 10px;/*角の丸み*/
+  padding:10px 20px;
+  margin-top:20px;
+  margin-right:60px;
+  margin-left:60px;
+}
+.button{
+  margin-left:60px;
 }
 </style>
