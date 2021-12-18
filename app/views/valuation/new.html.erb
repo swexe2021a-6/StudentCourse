@@ -3,10 +3,11 @@
 <% end %>
 
 <%= form_for @valuation, url: {action: :create} do |f| %>
-  <%= f.label :comment, 'コメント' %> 
-  <%= f.text_field :comment %> 
-  <%= f.label :star, '評価' %> 
-  <%= f.text_field :star %>
+<br>
+  <%= f.label :comment, 'コメント(300字以内)' %><br>
+  <%= f.text_area :comment ,:size=>"60x5"%><br><br>
+  <%= f.label :star, '評価(100点)' %> 
+  <%= f.text_field :star %>点
   <%= hidden_field_tag :id, params[:id] %>
   <%= f.submit '登録' %>
 <% end %>

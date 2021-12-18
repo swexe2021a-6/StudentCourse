@@ -5,7 +5,7 @@
 <% @valuation.each do |e| %>
     <p>
     コメント：<%= e.comment %>
-    評価：<%= e.star %>
+    評価：<%= e.star.to_i %>
     時刻：<%= e.tdate.strftime('%Y/%m/%d %H:%M:%S') %>
     
     </p>
