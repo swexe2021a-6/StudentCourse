@@ -18,10 +18,11 @@
       <div class="box">
         
         <div class = "user_verification">
-          <%= link_to '管理画面',management_index_path %>
+          
           <p>
             <% if current_user %>
-              ログイン中（<%= current_user.student_num %>さん）
+              ログイン中（<%= current_user.student_num %>さん）<br>
+              <%= link_to '管理画面',management_index_path %>
             <% else %>
               ログインしていません
             <% end %>
