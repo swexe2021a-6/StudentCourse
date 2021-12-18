@@ -9,7 +9,7 @@
     <title>情報学科履修一覧（専門科目）</title>
   </head>
   <header>
-    <h1>情報学科専門科目講義一覧</h1>
+    <h1>情報学科専門科目講義一覧</h1><br>
   </header>
   <body>
     <%= form_tag({controller:"valuation",action:"index"}, method: :get) do %>
@@ -17,7 +17,7 @@
     <%= submit_tag "検索" ,:message => nil ,class: "button is-info" %>
     <button><%= link_to "全表示", valuation_indexView_path %></button>
     <% end %>
-    
+    <br>
     <table border="1">
     <tr>
       <th>　科目名　</th>
@@ -33,7 +33,7 @@
       <td><%= link_to '評価閲覧', valuationviews_show_path(id: e.id) %></td>
     </tr>
     <% end %>
-  </table>
-  <%= link_to '戻る', "/" %>
+  </table><br>
+  <button><%= link_to '戻る', "/" %></button>
   </body>
 </html>
