@@ -1,8 +1,8 @@
 <% if flash[:info] %>
   <%= flash[:info] %>
 <% end %>
-
-<b>平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br></b>
+<% star=Valuation.where(subject: params[:id]).average(:star).round(1) %>
+<b>平均値：<%= star %><br></b>
 
 <div class = "main">
   <% @valuation.each do |e| %>
