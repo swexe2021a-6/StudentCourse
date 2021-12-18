@@ -2,17 +2,27 @@
   <%= flash[:info] %>
 <% end %>
 
-<% @valuation.each do |e| %>
+<b>平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br></b>
+
+<div class = "main">
+  <% @valuation.each do |e| %>
     <p>
-    <b>コメント</b>：<%= e.comment %>
-    <b>評価</b>：<%= e.star.to_i %>点
+    <b>コメント</b>：<%= e.comment %><br>
+    <b>評価</b>：<%= e.star.to_i %>点<br>
     <b>投稿日時</b>：<%= e.tdate.strftime('%Y/%m/%d %H:%M:%S') %>
-    
     </p>
 <% end %>
+</div>
 
-<b>平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br></b>
 
 <%= link_to '戻る', valuation_indexView_path %>
 <style>
+.main{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  background: #FFF;
+  border: solid 3px #1b9bff;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
 </style>
