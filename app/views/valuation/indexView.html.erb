@@ -14,7 +14,7 @@
   <body>
     <%= form_tag({controller:"valuation",action:"index"}, method: :get) do %>
     <%= text_field_tag :search %>
-    <%= submit_tag "検索" ,:message => nil ,class: "button is-info"%> 
+    <%= submit_tag "検索" ,:message => nil ,class: "button is-info" %>
     <button><%= link_to "全表示", valuation_indexView_path %></button>
     <% end %>
     
@@ -37,4 +37,3 @@
   <%= link_to '戻る', "/" %>
   </body>
 </html>
-

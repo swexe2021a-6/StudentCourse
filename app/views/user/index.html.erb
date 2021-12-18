@@ -13,7 +13,7 @@
         <% else %>
           ゲストさん
         <% end %></li>
-    <li><% if current_user %>
+    <li id = "setting"><% if current_user %>
               <%= link_to image_tag("setting.png", class: 'setting_img'), management_index_path %>
             <% else %>
               <%= link_to image_tag("setting.png", class: 'setting_img'), '/' %>
@@ -56,7 +56,7 @@ nav ul li{
 display: table-cell;
 min-width: 50px;
 border-right: 1px solid #000000;
-
+font-weight: bold;
 }
 nav ul li:first-child{
 border-left: 1px solid #000000;
@@ -67,12 +67,13 @@ width: 100%;
 padding: 10px 0;
 text-decoration: none;
 color: #000000;
-color: inherit;
+text-decoration: none;
 }
 nav ul li a:hover{
 background-color:#1b9bff;
 border-bottom: 5px solid #1b9bff;
-color: inherit;
+color: #ffffff;
+text-decoration: none;
 }
 nav ul li.current{
 font-weight: bold;
@@ -81,10 +82,12 @@ text-decoration: none;
 nav ul li.current a{
 border-bottom: 5px solid #1b9bff;
 color: #1b9bff;
+text-decoration: none;
 }
 nav ul li.current a:hover{
 border-bottom: 5px solid #ffffff;
 color: #ffffff;
+text-decoration: none;
 }
 .content1{
 position: absolute; 
@@ -97,6 +100,9 @@ background-color:#1b9bff;
 text-align:center;
 line-height: 300px;
 font-size:24pt;
+}
+.content1 a{
+  text-decoration: none;
 }
 
 .content2{
@@ -111,6 +117,9 @@ text-align:center;
 line-height: 300px;
 font-size:24pt;
 }
+.content2 a{
+  text-decoration: none;
+}
 
 .main{
  display: flex;
@@ -122,5 +131,11 @@ font-size:24pt;
 }
 .setting_img{
   width:20px;
+}
+nav ul li #setting a{
+  background-color:#ffffff;
+}
+nav ul li #setting a:hover{
+  background-color:#ffffff;
 }
 </style>
