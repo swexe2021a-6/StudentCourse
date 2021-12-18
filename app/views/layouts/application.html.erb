@@ -28,11 +28,6 @@
             <% end %>
           </p>
           <p>&copy; Kanbara&Ogita</p>
-          <p><% if current_user %>
-              <%= link_to image_tag("setting.png", class: 'setting_img'), management_index_path %>
-            <% else %>
-              <%= link_to image_tag("setting.png", class: 'setting_img'), '/' %>
-            <% end %></p>
       </div>
     </div>
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"><path id="wave" d=""/></svg>
@@ -65,10 +60,11 @@ svg {
   text-align: center;
   text-align: center;
   z-index: 1;
+  position: absolute;
+  top:1250px;
+  left:800px;
 }
-.setting_img{
-  width:30px;
-}
+
 </style>
 <script>
 $('#wave').wavify({

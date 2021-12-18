@@ -13,6 +13,11 @@
         <% else %>
           ゲストさん
         <% end %></li>
+    <li><% if current_user %>
+              <%= link_to image_tag("setting.png", class: 'setting_img'), management_index_path %>
+            <% else %>
+              <%= link_to image_tag("setting.png", class: 'setting_img'), '/' %>
+            <% end %></li>
     </ul>
   </nav>
 </header>
@@ -115,5 +120,7 @@ font-size:24pt;
 .main :visited{
   color :#ffffff;
 }
-
+.setting_img{
+  width:20px;
+}
 </style>
