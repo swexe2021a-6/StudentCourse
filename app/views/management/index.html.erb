@@ -17,43 +17,48 @@
   </nav>
 </header>
   <body>
-    <h1>管理者画面</h1>
-    <% if flash[:notice] %>
-      <%= flash[:notice] %>
-    <% end %>
-    <button><%= link_to '新規科目の追加', management_new_path %></button>
-    <button><%= link_to '戻る', root_path %></button>
-    <table border="1">
+    <div class="main">
+      <h1>管理者画面</h1>
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
+      <h2>科目登録</h2>
+      <button><%= link_to '新規科目の追加', management_new_path %></button>
+      <button><%= link_to '戻る', root_path %></button>
+      <table border="1">
+          <tr>
+            <th>　科目名　</th>
+            <th>　開講年次　</th>
+            <th>　シラバス　</th>
+            <th>　データの削除　</th>
+          </tr>
+          <% @management.each do |e| %>
+          <tr>
+            <td><%= e.subject %></td>
+            <td><%= e.annual %></td>
+            <td><%= link_to 'シラバス', e.link, target: :_blank %></td>
+            <td><%= link_to '削除', management_path(e), method: :delete %></td>
+          </tr>
+          <% end %>
+      </table><br>
+      <h2>ユーザ管理一覧</h2>
+      <button><%= link_to '新規ユーザの追加', new_user_path %></button>
+      <button><%= link_to '戻る', root_path %></button>
+      <table border="1">
         <tr>
-          <th>　科目名　</th>
-          <th>　開講年次　</th>
-          <th>　シラバス　</th>
-          <th>　データの削除　</th>
+          <th>　学籍番号　</th>
+          <th>　パスワード　</th>
+          <th>　ユーザの削除　</th>
         </tr>
-        <% @management.each do |e| %>
-        <tr>
-          <td><%= e.subject %></td>
-          <td><%= e.annual %></td>
-          <td><%= link_to 'シラバス', e.link, target: :_blank %></td>
-          <td><%= link_to '削除', management_path(e), method: :delete %></td>
-        </tr>
-        <% end %>
-    </table><br>
-    <h1>ユーザ管理一覧</h1>
-    <table border="1">
-      <tr>
-        <th>　学籍番号　</th>
-        <th>　パスワード　</th>
-        <th>　ユーザの削除　</th>
-      </tr>
-    <% @user.each do |e| %>
-        <tr>
-          <td><%= e.student_num %></td>
-          <td><%= e.pass %></td>
-          <td><%= link_to '削除', user_path(e), method: :delete %></td>
-        </p>
-    <% end %>
-    </table>
+      <% @user.each do |e| %>
+          <tr>
+            <td><%= e.student_num %></td>
+            <td><%= e.pass %></td>
+            <td><%= link_to '削除', user_path(e), method: :delete %></td>
+          </p>
+      <% end %>
+      </table>
+    </div>
   </body>
 </html>
 <style>
@@ -99,5 +104,8 @@ color: #ffffff;
 }
 button{
   margin-bottom:10px;
+}
+.main{
+  margin-left:30px;
 }
 </style>
