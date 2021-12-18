@@ -5,14 +5,14 @@
   <b><%= @management.subject %></b>
 
 
-  <b>平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br></b>
+  <b id = "avg">平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %>点<br></b>
 </div>
 
 
 
 
 <div class = "button">
-  <button><%= link_to '戻る', valuation_indexView_path %></button>
+  <button><%= link_to '一覧へ戻る', valuation_indexView_path %></button>
 </div>
 
   <% @valuation.each do |e| %>
@@ -28,6 +28,10 @@
 .title{
   font-size:24pt;
   margin-left:10px;
+}
+.title #avg{
+  font-size:20pt;
+  padding-left:25px;
 }
 .main{
   border:solid 3px #1b9bff;
