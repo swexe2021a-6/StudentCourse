@@ -2,6 +2,15 @@
    <%= flash[:notice] %>
 <% end %>
 
+<% if @valuation.errors.present? %>
+<h3>エラーがあります</h3>
+<ul>
+  <% @valuation.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_for @valuation, url: {action: :create} do |f| %>
 <br>
   <%= f.label :comment, 'コメント(300字以内)' %><br>

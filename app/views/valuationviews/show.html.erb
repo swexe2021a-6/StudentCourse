@@ -4,14 +4,14 @@
 
 <% @valuation.each do |e| %>
     <p>
-    コメント：<%= e.comment %>
-    評価：<%= e.star.to_i %>
-    時刻：<%= e.tdate.strftime('%Y/%m/%d %H:%M:%S') %>
+    <b>コメント</b>：<%= e.comment %>
+    <b>評価</b>：<%= e.star.to_i %>点
+    <b>投稿日時</b>：<%= e.tdate.strftime('%Y/%m/%d %H:%M:%S') %>
     
     </p>
 <% end %>
 
-平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br>
+<b>平均値：<%= Valuation.where(subject: params[:id]).average(:star).round(1) %><br></b>
 
 <%= link_to '戻る', valuation_indexView_path %>
 <style>
