@@ -18,7 +18,8 @@
 </header>
   <body>
     <div class="main">
-      <h1>管理者画面</h1>
+      <div class = "main1">
+        <h1>管理者画面</h1>
       <% if flash[:notice] %>
         <%= flash[:notice] %>
       <% end %>
@@ -41,8 +42,11 @@
             <td><%= link_to '削除', management_path(e), method: :delete %></td>
           </tr>
           <% end %>
-      </table><br>
-      <h2>ユーザ管理一覧</h2>
+      </table>
+      </div>
+      <br>
+      <div class = "main2">
+        <h2>ユーザ管理一覧</h2>
       <button><%= link_to '新規ユーザの追加', new_user_path %></button>
       <button><%= link_to '戻る', root_path %></button>
       <table border="1">
@@ -59,6 +63,7 @@
           </p>
       <% end %>
       </table>
+      </div>
     </div>
   </body>
 </html>
@@ -108,5 +113,13 @@ button{
 }
 .main{
   margin-left:30px;
+}
+.main1{
+  float:left;
+}
+.main2{
+  float:right;
+  margin-top:20px;
+  margin-right:500px;
 }
 </style>
